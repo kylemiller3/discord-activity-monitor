@@ -1,0 +1,11 @@
+node_modules
+out
+docs
+.git
+auth*
+*.log
+*.out
+*.db
+docker_build.sh
+!.gitignore
+

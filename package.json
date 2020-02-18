@@ -1,0 +1,36 @@
+{
+  "name": "discord-bond-bot",
+  "version": "1.0.0",
+  "description": "Keeps stats on users in Discord",
+  "main": "index.js",
+  "scripts": {
+    "build": "tsc --project ./tsconfig.json",
+    "test": "mocha --project ./tsconfig.json --colors --require esm --require ts-node/register ./**/*.spec.ts",
+    "start": "ts-node -T --project ./tsconfig.json ./index.ts"
+  },
+  "keywords": [
+    "discord",
+    "stats",
+    "activity",
+    "monitor"
+  ],
+  "author": "kylemiller3@my.unt.edu",
+  "license": "GPL-3.0",
+  "dependencies": {
+    "@types/node": "^13.5.1",
+    "discord.js": "^11.5.1",
+    "esm": "^3.2.25",
+    "events": "^3.1.0",
+    "json2csv": "^4.5.4",
+    "log4js": "^6.1.0",
+    "pg-promise": "^10.3.5",
+    "rxjs": "^6.5.4",
+    "ts-node": "^8.6.2",
+    "typescript": "^3.7.5"
+  },
+  "devDependencies": {
+    "eslint": "^6.8.0",
+    "eslint-config-airbnb-base": "^14.0.0",
+    "eslint-plugin-import": "^2.20.0"
+  }
+}
