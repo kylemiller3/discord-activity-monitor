@@ -21,7 +21,7 @@ RUN apk update && \
     apk upgrade
 
 # Copy across the files from our `intermediate` container
-RUN mkdir -p /root/docker/bond/
+RUN mkdir -p /root/docker/
 
 # Copy from git
 WORKDIR /root/docker/
