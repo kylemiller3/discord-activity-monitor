@@ -2,7 +2,7 @@ import pgp, { PreparedStatement } from 'pg-promise';
 // eslint-disable-next-line import/no-unresolved
 import pg from 'pg-promise/typescript/pg-subset';
 import { Utils } from './utils';
-import { dbPassword, dbHost, dbPort } from '../auth';
+import { dbPassword, dbHost, dbPort, dbName, dbUser } from '../auth';
 import { async } from 'rxjs/internal/scheduler/async';
 
 // eslint-disable-next-line @typescript-eslint/no-namespace
@@ -76,10 +76,18 @@ export namespace Db {
     export const mainDb = pgp(initOptions)({
         host: dbHost,
         port: dbPort,
-        database: 'discord-bond-bot',
-        user: 'postgres',
+        database: dbName,
+        user: dbUser,
         password: dbPassword,
     });
+
+    // export const testDb = pgp(initOptions)({
+    //     host: dbHost,
+    //     port: dbPort,
+    //     database: dbName,
+    //     user: dbUser,
+    //     password: dbPassword,
+    // });
 
     export const createTables = (
         db: pgp.IDatabase<unknown, pg.IClient> = Db.mainDb,
